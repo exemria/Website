@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+    background-image: url("{{ url_for('static', filename='CSS/background_image.jpeg') }}");
+    background-size: cover; /* Scale the image to cover the entire element */
+    background-position: center; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    
+  }
+  /*
+   * Formatting the header area
+   */
+  
+  header {
+    background-color: #DFB887;
+    height: 35px;
+    width: 100%;
+    opacity: .9;
+    margin-bottom: 10px;
+  }
+  header h1.logo {
+    margin: 0;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    float: left;
+  }
+  header h1.logo:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  /*
+   * Centering the body content
+   */
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+  div.home {
+    padding: 10px 0 30px 0;
+    /*background-color:  #E6E6FA; */
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+  }
+  div.about {
+    padding: 10px 0 30px 0;
+    /*background-color: #E6E6FA;*/
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+  }
+  h2 {
+    font-size: 3em;
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: -2px;
+  }
+  h3 {
+    font-size: 1.7em;
+    font-weight: 100;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #999;
+  }
+  .menu {
+    float: right;
+    margin-top: 8px;
+  }
+  .menu li {
+    display: inline;
+  }
+  .menu li + li {
+    margin-left: 35px;
+  }
+  .menu li a {
+    color: #444;
+    text-decoration: none;
+  }
+  .image-container {
+    position: relative; /* Required for positioning the image */
+    display: flex;
+    flex-direction: column;
+    align-items: flex;
+    gap: 10px;
+  }
+
+  .hover-image {
+    max-width: 100%; /* Ensure images don't exceed their container's width */
+    width: 400px; /* Set the initial width of the image */
+    transition: transform 0.3s; /* Add a smooth transition effect */
+    align-self: center;
+  }
+
+  .hover-image:hover {
+    transform: scale(1.2); /* Enlarge the image on hover */
+    /* You can adjust the scale factor to make it larger or smaller */
+  }
+
+  .styled-button {
+    background-color: #1e2d3d; /* Background color of the button */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Remove default button border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    
+  }
+  .styled-button:hover {
+    background-color: #14212f; /* Change background color on hover */
+    
+  }
+
+  .styled-button:active {
+    background-color: rgb(10, 25, 42); /* Change background color on click */
+    
+  }
