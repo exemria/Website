@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kitties</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <div class="image-container">
+      <h1>{{message}}</h1>
+      {% for i in range(1,7) %}
+      <a href="#" class="hover-trigger" class="styled-button"></a>
+      <img src="/static/css/pic{{i}}.jpeg" alt="Pic {{i}}" width="20%" height="auto" class="hover-image" />
+      <form id="rate-form-{{i}}">
+        <input type="number" min=1 max=5 name="rating" placeholder="Rate me from 1 to 5">
+        <input type="hidden" name="picture_id" value="{{i}}">
+        <input type="submit" value="Rate me" class="styled-button">
+      </form>
+      {% endfor %}
+    </div>
+    {% endblock %}
+  </body>
+</html>
