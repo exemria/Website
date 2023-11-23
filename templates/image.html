@@ -7,18 +7,34 @@
   <body>
     {% extends "template.html" %}
     {% block content %}
+    <h1> {{message}} </h1>
     <div class="image-container">
-      <h1>{{message}}</h1>
-      {% for i in range(1,7) %}
-      <a href="#" class="hover-trigger" class="styled-button"></a>
-      <img src="/static/css/pic{{i}}.jpeg" alt="Pic {{i}}" width="20%" height="auto" class="hover-image" />
-      <form id="rate-form-{{i}}" action="/image" method ="POST">
-        <input type="number" min=1 max=5 name="rating" placeholder="Rate me from 1 to 5">
-        <input type="hidden" name="picture_id" value="{{i}}">
-        <input type="submit" value="Rate me" class="styled-button">
-      </form>
-      <p>
-        {{ ratings_data[i].rating }}
+      {% for i in range(1,12) %}
+        <div class="image-wrapper">
+          <img src="/static/css/pic{{i}}.jpeg" alt="Pic {{i}}" width="20%" height="auto" class="hover-image" />
+          <div class="button-overlay"> 
+            <form id="rate-form-{{i}}" action="/image" method ="POST" >
+              <input type="number" min=1 max=5 name="rating" placeholder="Rate me from 1 to 5"  class="styled-input">
+              <input type="hidden" name="picture_id" value="{{i}}" >
+              <input type="submit" value="Rate me" class="styled-button">
+              {% if ratings_data %}
+                {% for item in ratings_data %}
+                  {% if item.picture_id == i %}
+                    <span class="rating-value">{{ item.rating }}</span>
+                  {% endif %}
+              {% endfor %}
+              {% else %}
+                <p>No ratings available.</p>
+              {% endif %}
+
+
+             
+
+             
+            </form>
+          </div>
+        </div>
+      <p ></p>
       
       </p>
       {% endfor %}
@@ -27,3 +43,4 @@
     {% endblock %}
   </body>
 </html>
+
