@@ -34,9 +34,22 @@ body {
   /*
    * Centering the body content
    */
+
+   h1 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+   }
+   p {
+    text-align: center;
+
+   }
+
   .container {
     width: 1200px;
     margin: 0 auto;
+
   }
   
   div.home {
@@ -83,36 +96,103 @@ body {
   }
   .image-container {
     position: relative; /* Required for positioning the image */
+    flex-wrap: wrap; /* Allow flex items to wrap to the next row */
+    justify-content: space-between; /* Distribute items along the row with space between them */
     display: flex;
-    flex-direction: column;
-    align-items: flex;
-    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .hover-image {
     max-width: 100%; /* Ensure images don't exceed their container's width */
-    width: 400px; /* Set the initial width of the image */
+    width: 450px; /* Set the initial width of the image */
     transition: transform 0.3s; /* Add a smooth transition effect */
     align-self: center;
   }
 
   .hover-image:hover {
-    transform: scale(1.2); /* Enlarge the image on hover */
+    transform: scaleX(1.2);
+    /*transform: scale(1.2); /* Enlarge the image on hover */
     /* You can adjust the scale factor to make it larger or smaller */
   }
 
-  .styled-button {
-    background-color: #1e2d3d; /* Background color of the button */
-    color: #fff; /* Text color */
-    padding: 10px 20px; /* Padding around the text */
-    border: none; /* Remove default button border */
-    border-radius: 5px; /* Add rounded corners */
-    cursor: pointer; /* Show a pointer cursor on hover */
+/* CSS styles for alignment */
+.image-wrapper {
+  position: relative;
+}
+
+.rate-section {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.rate-button {
+  display: flex;
+  align-items: center;
+
+}
+
+.rating-value {
+  margin-left: 5px; /* Adjust spacing between rating value and button */
+  background-color: #1e2d3d;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+
+  .botton-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+
+    /*
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* Center align the button and input */
     
+  }
+  
+  .styled-input {
+    width: 150px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    
+  }
+
+  .styled-button {
+    background-color: #1e2d3d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+
   }
   .styled-button:hover {
     background-color: #14212f; /* Change background color on hover */
-    
+  
+  }
+
+  .styled-button:active {
+    background-color: rgb(10, 25, 42);
   }
 
   .styled-button:active {
